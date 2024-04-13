@@ -1,0 +1,11 @@
+.menu table {
+    width: 100%;
+    margin-top: 10px;
+    opacity: 100%;
+    /* background-color: rgb(19, 93, 163); */
+     background: linear-gradient(to right,
+    #b7e3ed, #d6b3e7, #add698);
+}
+td a :hover{
+    text-decoration: none;
+}
