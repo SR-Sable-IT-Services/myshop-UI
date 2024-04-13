@@ -44,19 +44,19 @@ function Product({ product }) {
          <div className="product">
               <div className="image">
                   <img src={product.images[0]} alt={product.name} />
-              </div>
-              <span className='title'>{product.name}</span>
-              <span className='description'>{product.description}</span>
-              <span className='price'>Rs{product.price}</span>
+              </div><br></br>
+              <span className='title'>{product.name}</span><br></br>
+              {/* <span className='description'>{product.description}</span> */}
+              <span className='price'>Rs{product.price}</span><br></br>
                {/* <span className='rating'>Rating: {product.rating}</span>  */}
-              <span className='stock'>Stock: {product.stock}</span>
-              <span className='brand'>Brand: {product.brand}</span>
-              <span className='descount-percentage'>DiscountPercentage: {product.discountPercentage}</span>
+              {/* <span className='stock'>Stock: {product.stock}</span> */}
+              <span className='brand'>Brand: {product.brand}</span><br></br>
+              <span className='descount-percentage'>DiscountPercentage: {product.discountPercentage}</span><br></br>
               <button className='btn btn-info' type="submit">Add to Cart</button>
               
     <div className="star-rating">
         <Rating rat={product.rating} />
-    <span className="star fs-2">&#9733;</span>
+    {/* <span className="star fs-2">&#9733;</span> */}
       {/* {[...Array(5)].map((star, index) => {
         index += 1;
         return (
@@ -78,18 +78,23 @@ function Product({ product }) {
 };
 function Rating(rat) {
         const [rating, setRating] = useState(null);
-       console.log(rat);
+        // setRating(rat);
+       console.log("rating",rat.rat);
         return (
             <div>
-                {[...Array(4)].map((star, i) => {
+              
+                {[...Array(5)].map((star, i) => {
                     const ratingValue = i + 1;
                     return (
                         <span
+                        onLoad={() => 
+                          setRating(rat.rat)}
                             key={i}
-                            className={i < (rating) ? "on" : "off"}
-                            onClick={() => setRating(i)}
+                            className={i < (rat.rat-1) ? "on" : "off"}
+                           
+                            // onClick={() => setRating(rat)}
                         >
-                            <span className="star fs-2">&#9733;</span>
+                            <span className="star fs-2">&#9733;</span> 
                         </span>
                     );
                 })}
